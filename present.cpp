@@ -123,7 +123,7 @@ void completeTask(ConcurrentLinkedList* list, std::unordered_set<int>* giftBag, 
                 giftBag->erase(it);
                 list->insert(present);
                 int added = ++presentsAdded;
-                // Example print statement (might not print correctly due to concurrency)
+                // print statement
                 if (added % 10000 == 0) {
                     std::cout << added << " presents added.\n";
                 }
@@ -134,7 +134,7 @@ void completeTask(ConcurrentLinkedList* list, std::unordered_set<int>* giftBag, 
                 std::lock_guard<std::mutex> lock(cardsMutex);
                 cards->insert(guest);
                 int written = ++cardsWritten;
-                // Example print statement
+                // print statement
                 if (written % 10000 == 0) {
                     std::cout << written << " thank you cards written.\n";
                 }
